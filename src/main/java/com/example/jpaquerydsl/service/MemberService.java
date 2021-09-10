@@ -20,7 +20,7 @@ public class MemberService {
 
     public Long update(Long id, MemberUpdateDto requestDto) {
         Member member = memberRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("존재하지 않는 멤버"));
-        member.update(requestDto.getName());
+        member.update(requestDto.getName(), requestDto.getAge(), requestDto.getTeam());
         return id;
     }
 }

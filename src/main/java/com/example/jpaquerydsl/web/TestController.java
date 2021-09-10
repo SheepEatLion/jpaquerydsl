@@ -22,6 +22,6 @@ public class TestController {
         return memberService.save(requestDto);
     }
 
-    @GetMapping("/read")
-    public
+    //@GetMapping("/read")
+    //public
 }

@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+import static com.example.jpaquerydsl.service.domain.QMember.member;
+
 @Repository
 public class MemberDao extends QuerydslRepositorySupport {
 
@@ -21,7 +23,7 @@ public class MemberDao extends QuerydslRepositorySupport {
 
     public List<Member> findByName(String name) {
         return queryFactory
-                .selectFrom()
+                .selectFrom(member)
                 .where(member.name.eq(name))
                 .fetch();
     }
